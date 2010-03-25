@@ -1,0 +1,42 @@
+html{
+	margin: 0 0 1px 0;
+	padding: 0;
+}
+ul, li, form, input, dt, dl, dd, ol, div, p, blockquote, h1, h2, h3, h4, h5, h6, a {
+	margin:0;padding:0;
+}
+body {
+	font-family:'Helvetica Neue', Arial;
+	background-color:#FFFFFF;
+	margin:0;padding:0;
+}
+a{
+	outline:medium none;
+	color:blue;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+h1{
+	font-weight:bold;
+	font-size:1.5em;
+}
+h2{
+	font-size:18px;
+}
+p{
+	line-height:140%;
+	color:#333333;
+}
+.clear{
+	clear:both;
+}
+#application-wrap{
+	margin:0 auto;
+	width:900px;
+	padding:0 25px;
+}
+#header{
+	text-transform:uppercase;
+}
