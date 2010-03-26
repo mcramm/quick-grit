@@ -1,3 +1,16 @@
 <div id='lower-wrap'>
-
+	<% @commits.each do |c|%>
+		<div id='commit'>
+			<div id='commit-id'><%= c.id %></div>
+			<% c.tree.contents.each do |t| %>
+				<% if t.kind_of? Blob%>
+					<div id='blob-name'><%= t.name %></div>
+				<%else %>
+					<div id='tree' style='margin-left:10px'>
+						<%= erb :tree, :layout => false, :locals => {:tree => t}%>
+					</div>
+				<% end%>
+			<% end %>
+			</div>
+		<% end %>
 </div>
