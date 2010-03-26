@@ -1,0 +1,11 @@
+<div id='go-back'><a href='/'><< Back</a>
+<div id='commit'>
+	<div id='commit-message'>
+		<%= @commit.message %>
+	</div>
+	<div id='commit-autor'><%= @commit.committer %> (<%= @commit.committer.email %>)</div>
+	<div id='commit-time'><%= @commit.committed_date %></div>
+	<% @commit.show.each do |s| %>
+		<%= erb :diff, :layout => false, :locals => {:diff => s.diff, :type => s.b_blob.mime_type} %>
+	<% end %>
+</div>

@@ -40,3 +40,7 @@ p{
 #header{
 	text-transform:uppercase;
 }
+
+#commit {
+	margin-top:15px;
+}
