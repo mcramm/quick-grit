@@ -4,9 +4,9 @@
 		<div id='blob-list'>
 			<% c.tree.contents.each do |t| %>
 				<% if t.kind_of? Blob%>
-					<div id='blob-name'><%= t.name %></div>
+					<div id='blob-name'><a href='/blob/<%= t.id %>'><%= t.name %></a></div>
 				<%else %>
-					<div id='tree-name'><%= t.name %></div>
+					<div id='tree-name'><%= t.name %>/</div>
 					<div id='tree' style='margin-left:10px'><%= erb :tree, :layout => false, :locals => {:tree => t}%></div>
 				<% end%>
 		<% end %>
@@ -14,7 +14,6 @@
 <div id='commits'>
 	<h1>Commit History</h1>
 	<% @commits.each do |c| %>
-	<a href='/commit/<%= c.id %>'><%= c.id_abbrev %></a>
-		<br>
+		<div id='commit-link'><a href='/commit/<%= c.id %>'><%= c.id_abbrev %></a> - <%= c.short_message %></div>
 	<% end %>
 </div>

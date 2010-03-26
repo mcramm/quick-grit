@@ -19,6 +19,10 @@ get '/commit/:id' do |id|
   erb :commit
 end
 
+get '/blob/:id' do |id|
+  @blob = @repo.blob(id)
+  erb :blob
+end
 
 def highlight(type, content)
   converter = Syntax::Convertors::HTML.for_syntax type
