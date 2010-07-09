@@ -25,8 +25,7 @@ get '/blob/:id' do |id|
 end
 
 def highlight(type, content)
-  converter = Syntax::Convertors::HTML.for_syntax type
-  @out = converter.convert(content)
+    CodeRay.scan(content, 'diff').div(:css => :class)
 end
 
 private
