@@ -28,8 +28,13 @@ get '/stylesheets/:name.css' do
 end
 
 get '/' do
-    @commits = @repo.commits
+    @last_commit = @repo.commits.first
     haml :index
+end
+
+get "/commits" do
+    @commits = @repo.commits
+    haml :commits
 end
 
 get '/commit/:id' do |id|

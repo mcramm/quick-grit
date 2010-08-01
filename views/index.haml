@@ -1,15 +1,7 @@
 #lower-wrap
     .file-list
         %h2 Files
-        - c = @commits.first
         #blob-list
-            - c.tree.contents.each do |t|
+            - @last_commit.tree.contents.each do |t|
                 .tree
                     = haml :tree, :layout => false, :locals => {:tree => t}
-    .commits
-        %h2 Commit History
-        - @commits[0..10].each do |c|	
-            #comment-link
-                %a{:href => "/commit/#{c.id}"}
-                    = c.id_abbrev
-                = c.short_message

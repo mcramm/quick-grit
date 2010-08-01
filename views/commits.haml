@@ -1,0 +1,10 @@
+.commits
+    - @commits[0..10].each do |c|
+        -if @curr_date != c.date.strftime("%b %d, %Y")
+            -@curr_date = c.date.strftime("%b %d, %Y")
+            .date= @curr_date
+        .commit-wrap
+            %a.commit{:href => "/commit/#{c.id}", :title => "Click to view commit"}
+                .author
+                    = "Author: #{c.author}"
+                .message= c.short_message
