@@ -1,1 +1,5 @@
+*.swp
+views/stylesheets/.sass-cache/**
+.sass-cache/**
+static/stylesheets
 *~

@@ -1,0 +1,11 @@
+- if tree.kind_of? Blob
+    #blob-name
+        %a{:href => "/blob/#{tree.id}"}
+            = tree.name
+- else
+    #tree-name
+        = tree.name 
+        %span>< /
+    - tree.contents.each do |t|
+        .tree
+            = haml :tree, :layout => false, :locals => {:tree => t}

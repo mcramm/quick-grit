@@ -1,8 +1,0 @@
-<% tree.contents.each do |t| %>
-	<% if t.kind_of? Blob%>
-		<div id='blob-name'><a href='/blob/<%= t.id %>'><%= t.name %></a></div>
-	<%else %>
-		<div id='tree-name'><%= t.name %>/</div>
-		<div id='tree' style='margin-left:10px'><%= erb :tree, :layout => false, :locals => {:tree => t}%></div>
-	<% end%>
-<% end %>

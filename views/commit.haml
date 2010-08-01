@@ -1,0 +1,13 @@
+#go-back
+    %a{:href => '/'}
+        Back
+#commit
+    .commit-meta
+        .commit-author
+            = "Author: #{@commit.committer}"
+        .commit-time
+            = @commit.committed_date.strftime("%b %d, %Y at %M:%I %p")
+        .commit-message
+            = @commit.message
+    - @commit.show.each do |s|
+        = haml :diff, :layout => false, :locals => {:commit => s, :type => 'diff'}
