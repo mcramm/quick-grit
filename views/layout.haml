@@ -14,6 +14,14 @@
         #container
             #header
                 %h1= @repo_name
+                .menu-wrap
+                    .menu
+                        .item-wrap
+                            %a.item.source{:href => "/"} Source
+                        .item-wrap
+                            %a.item.history{:href => "/commits"} History
+                        .item-wrap
+                            %a.item.branches{:href => "/branches"} Branches / Tags
             #body
                 =yield
             #footer

@@ -14,10 +14,10 @@ h2
 
 a
     +link_stan
-	
+    
 a:visited
     +link_stan
-	
+    
 a:hover
     color: $link_hover
     text-decoration: underline
@@ -29,3 +29,22 @@ a:hover
     color: #aaa
     font-size: 12px
     margin-top: 15px
+
+.menu-wrap
+    .menu
+        display: table
+        .item-wrap
+            display: table-cell
+            padding: 5px 25px 5px 5px
+            a
+                color: $font_color
+            a:hover
+                text-decoration: none
+                
+            .item
+                padding-bottom: 2px
+                text-align: left
+                border-bottom: 1px solid white
+            .item:hover
+                cursor: pointer
+                border-bottom: 1px solid black
