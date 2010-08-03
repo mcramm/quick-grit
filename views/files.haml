@@ -1,0 +1,7 @@
+#lower-wrap
+    .file-list
+        %h2 Files
+        #blob-list
+            - files.each do |t|
+                .tree
+                    = haml :tree, :layout => false, :locals => {:tree => t}

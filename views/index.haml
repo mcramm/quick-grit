@@ -1,7 +1,1 @@
-#lower-wrap
-    .file-list
-        %h2 Files
-        #blob-list
-            - @last_commit.tree.contents.each do |t|
-                .tree
-                    = haml :tree, :layout => false, :locals => {:tree => t}
+= haml :files, :layout => false, :locals => {:files => @last_commit.tree.contents}

@@ -32,6 +32,10 @@ get '/' do
     haml :index
 end
 
+get '/tree/:id' do |id| 
+    haml :files, :locals => {:files => @repo.tree(id).contents}
+end
+
 get "/commits" do
     @commits = @repo.commits
     haml :commits

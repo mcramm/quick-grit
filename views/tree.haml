@@ -1,11 +1,9 @@
 - if tree.kind_of? Blob
-    #blob-name
+    .blob-name
         %a{:href => "/blob/#{tree.id}"}
             = tree.name
 - else
-    #tree-name
-        = tree.name 
+    .tree-name
+        %a{:href => "/tree/#{tree.id}"}
+            = tree.name 
         %span>< /
-    - tree.contents.each do |t|
-        .tree
-            = haml :tree, :layout => false, :locals => {:tree => t}
