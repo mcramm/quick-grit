@@ -1,9 +1,9 @@
 - if tree.kind_of? Blob
-    .blob-name
+    .blob-name.file-name
         %a{:href => "/blob/#{tree.id}"}
             = tree.name
 - else
-    .tree-name
+    .tree-name.file-name
         %a{:href => "/tree/#{tree.id}"}
-            = tree.name 
+            = tree.name
         %span>< /
